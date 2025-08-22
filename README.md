@@ -1,26 +1,52 @@
-# Smart Task App
+# 🧠 Smart Task Manager
 
-A minimal, functional, and "smart" task manager built with HTML, CSS, and JavaScript.
+A modern, minimal, and responsive task management web app that helps you stay organized — with smart features like priorities, deadlines, and persistent local storage.
 
-## 🔧 Features
+Built with **HTML, CSS, JavaScript**, and designed with inspiration from **Material UI**, **ShadCN**, and modern design patterns.
 
-### Basic
-- ✅ Add tasks
-- ✅ View list of tasks
-- ✅ Mark tasks complete
-- ✅ Delete tasks
+---
 
-### Smart
-- 💾 Persistent tasks via `localStorage`
-- 🎯 Priority tags (High, Medium, Low)
-- 📅 Optional deadlines with visual alerts
-- ✏️ Inline task editing
-- 🌗 Dark mode
-- 🔍 Filter: All / Completed / Pending
+## 🚀 Features
 
-## 🚀 Getting Started
+### ✅ Core Features
+- Add new tasks via a clean modal form
+- Mark tasks as complete/incomplete
+- Delete or edit tasks
+- Responsive, mobile-first layout
 
-1. Clone the repo:
+### 🧠 Smart Features
+- Prioritize tasks (High, Medium, Low)
+- Add optional deadline and description
+- View counts for All, Completed, Pending, and Important tasks
+- Persist tasks in `localStorage`
+- Light/dark mode toggle (with icon)
+- Clean tab-based filters with active styling
+
+---
+
+## 📸 UI Highlights
+
+- Tabs for filtering (All / Completed / Pending / Important)
+- Task cards with priority color markers
+- Modal form for creating tasks
+- FontAwesome icons for UI actions
+- Dark mode with persistent state
+
+---
+
+## 📂 Project Structure
+
+
+---
+
+## 🛠️ How to Use
+
+1. Clone or download the project:
    ```bash
-   git clone https://github.com/yourname/smart-task.git
+   git clone https://github.com/iwmvictor/smart-task.git
    cd smart-task
+
+
+---
+
+

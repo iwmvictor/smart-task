@@ -3,36 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Smart Task App</title>
+  <title>Smart Task Manager</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Smart Tasks</h1>
-      <button id="toggle-dark">🌓</button>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Smart Task Manager</h1>
+      <button id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
     </header>
 
-    <div class="task-input">
-      <input type="text" id="task-text" placeholder="Enter task..." />
-      <select id="priority">
-        <option value="Low">Low</option>
-        <option value="Medium" selected>Medium</option>
-        <option value="High">High</option>
-      </select>
-      <input type="date" id="deadline" />
-      <button id="add-task">Add</button>
-    </div>
+    <nav class="task-tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-filter="all" class="tab active">All</button>
+      <button role="tab" aria-selected="false" data-filter="completed" class="tab">Completed</button>
+      <button role="tab" aria-selected="false" data-filter="pending" class="tab">Pending</button>
+    </nav>
 
-    <div class="filters">
-      <button data-filter="all">All</button>
-      <button data-filter="completed">Completed</button>
-      <button data-filter="pending">Pending</button>
-    </div>
+    <main>
+      <ul id="task-list" aria-live="polite" aria-label="Task list" class="task-list"></ul>
+    </main>
 
-    <ul id="task-list"></ul>
+    <button id="add-task-button" aria-label="Add task" class="add-task-btn">
+      <i class="fa-solid fa-plus"></i>
+    </button>
   </div>
 
+  <!-- Task Modal -->
+  <div id="task-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden aria-hidden="true">
+    <div class="modal-content">
+      <h2 id="modal-title">Add Task</h2>
+      <form id="task-form">
+        <label>
+          Description
+          <input type="text" name="description" required aria-required="true" />
+        </label>
+        <label>
+          Priority
+          <select name="priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </label>
+        <label>
+          Deadline
+          <input type="datetime-local" name="deadline" />
+        </label>
+        <div class="modal-buttons">
+          <button type="submit">Save</button>
+          <button type="button" id="modal-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" aria-live="assertive" aria-atomic="true"></div>
+
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
